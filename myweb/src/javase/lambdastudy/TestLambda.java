@@ -1,9 +1,10 @@
-package liutao.lambdastudy;
+package javase.lambdastudy;
+
 
 import java.util.*;
 
 /**
- * Created by ym on 2018/7/27.
+ * Created by lt on 2018/7/27.
  * Function :
  * Params :
  * Return :
