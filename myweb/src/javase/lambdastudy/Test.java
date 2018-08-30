@@ -1,11 +1,11 @@
-package liutao;
+package javase.lambdastudy;
 
 
 import java.util.*;
 import java.util.regex.Pattern;
 
 /**
- * Created by ym on 2018/7/31.
+ * Created by lt on 2018/7/31.
  * Function :
  * Params :
  * Return :
@@ -59,7 +59,7 @@ public class Test {
 
 
     public static String getNextElementById(String column) {
-        List<String > list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         list.add("getCommunityId");
         list.add("getVillageCommunityId");
         list.add("getStreetId");

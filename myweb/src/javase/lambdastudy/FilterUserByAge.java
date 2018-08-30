@@ -1,7 +1,7 @@
-package liutao.lambdastudy;
+package javase.lambdastudy;
 
 /**
- * Created by ym on 2018/7/30.
+ * Created by lt on 2018/7/30.
  * Function :
  * Params :
  * Return :
