@@ -31,11 +31,16 @@ public class RegixDemo {
 //        }
 
         //爬虫：一个用于在互联网中获取符合指定规则的数据小程序
-        List<String> list2 = testSpiderByWeb();
-        //打印输出，也可以保存到excel中，等等
-        for(String s : list2){
-            System.out.println(s);
-        }
+//        List<String> list2 = testSpiderByWeb();
+//        //打印输出，也可以保存到excel中，等等
+//        for(String s : list2){
+//            System.out.println(s);
+//        }
+
+
+//        int i= 0;
+//        i = i++;
+//        System.out.println(i);
 
 
     }
