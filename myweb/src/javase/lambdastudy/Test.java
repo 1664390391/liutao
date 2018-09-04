@@ -33,8 +33,20 @@ public class Test {
             System.out.println("count"+count);
             numberAndCount.put(i, count++); // NullPointerException
         }*/
-      String s = String.valueOf(123);
-      System.out.println(s.getClass());
+//        String s = String.valueOf(123);
+//        System.out.println(s.getClass());
+
+        int a = 3,b = 5;
+        //a 通过位运算得到异或之后的值
+        a = a ^ b;
+        //这里b = a ^ b  ^ b --> a，一个数异或两次同一个数，得到的还是原来的数
+        b = a ^ b;
+        //这里a = a ^ b ^ a  -->  这里的b就是之前的a，也就想当于 a ^ b ^ a --> b
+        a = a ^ b;
+        //下面实例通过算术运算和上面的同理
+        a = a+b;
+        b = a-b;
+        a = a-b;
 
 
     }
