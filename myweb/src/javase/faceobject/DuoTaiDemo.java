@@ -11,6 +11,24 @@ import java.util.HashMap;
 
 interface Inter{
     void show();
+
+    public static interface Inter2{
+
+    }
+    
+}
+
+interface A{int NUM = 1;}
+interface B{int NUM = 4;}
+
+class Test implements B,A{
+    //错误，和接口中的常量名称冲突，接口中常量默认省略public static final
+//    public static final NUM = 2;
+
+
+    public static void main(String [] args){
+        System.out.println(B.NUM);
+    }
 }
 
 public class DuoTaiDemo {
