@@ -1,0 +1,6 @@
+目前计划
+9月-国庆之前：完成thinking in java 的初次阅读，理解大部分。
+
+10月计划观看并练习spring , spring mvc 基本知识点
+
+11月初定计划观看并练习 linux 系统
