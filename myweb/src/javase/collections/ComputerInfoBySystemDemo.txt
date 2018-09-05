@@ -1,0 +1,57 @@
+java.runtime.name:Java(TM) SE Runtime Environment
+sun.boot.library.path:E:\jdk1.8.0_65\jre\bin
+java.vm.version:25.65-b01
+java.vm.vendor:Oracle Corporation
+java.vendor.url:http://java.oracle.com/
+path.separator:;
+java.vm.name:Java HotSpot(TM) 64-Bit Server VM
+file.encoding.pkg:sun.io
+idea.launcher.port:7532
+user.script:
+user.country:CN
+sun.java.launcher:SUN_STANDARD
+sun.os.patch.level:Service Pack 1
+java.vm.specification.name:Java Virtual Machine Specification
+user.dir:D:\liutaowork\myweb
+java.runtime.version:1.8.0_65-b17
+java.awt.graphicsenv:sun.awt.Win32GraphicsEnvironment
+java.endorsed.dirs:E:\jdk1.8.0_65\jre\lib\endorsed
+os.arch:amd64
+java.io.tmpdir:C:\Users\ADMINI~1\AppData\Local\Temp\
+line.separator:
+
+java.vm.specification.vendor:Oracle Corporation
+user.variant:
+os.name:Windows 7
+sun.jnu.encoding:GBK
+java.library.path:E:\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;F:\app\Administrator\product\11.1.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\jdk1.8.0_65\bin;E:\jdk1.8.0_65\jre\bin;E:\MySQL\MySQL Server 5.5\bin;E:\apache-maven-3.5.2\bin;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\TortoiseSVN\bin;.
+java.specification.name:Java Platform API Specification
+java.class.version:52.0
+sun.management.compiler:HotSpot 64-Bit Tiered Compilers
+os.version:6.1
+user.home:C:\Users\Administrator
+user.timezone:
+java.awt.printerjob:sun.awt.windows.WPrinterJob
+java.specification.version:1.8
+file.encoding:UTF-8
+idea.launcher.bin.path:E:\JetBrains\IntelliJ IDEA 2016.3.4\bin
+user.name:Administrator
+java.class.path:E:\jdk1.8.0_65\jre\lib\charsets.jar;E:\jdk1.8.0_65\jre\lib\deploy.jar;E:\jdk1.8.0_65\jre\lib\ext\access-bridge-64.jar;E:\jdk1.8.0_65\jre\lib\ext\cldrdata.jar;E:\jdk1.8.0_65\jre\lib\ext\dnsns.jar;E:\jdk1.8.0_65\jre\lib\ext\jaccess.jar;E:\jdk1.8.0_65\jre\lib\ext\jfxrt.jar;E:\jdk1.8.0_65\jre\lib\ext\localedata.jar;E:\jdk1.8.0_65\jre\lib\ext\nashorn.jar;E:\jdk1.8.0_65\jre\lib\ext\sunec.jar;E:\jdk1.8.0_65\jre\lib\ext\sunjce_provider.jar;E:\jdk1.8.0_65\jre\lib\ext\sunmscapi.jar;E:\jdk1.8.0_65\jre\lib\ext\sunpkcs11.jar;E:\jdk1.8.0_65\jre\lib\ext\zipfs.jar;E:\jdk1.8.0_65\jre\lib\javaws.jar;E:\jdk1.8.0_65\jre\lib\jce.jar;E:\jdk1.8.0_65\jre\lib\jfr.jar;E:\jdk1.8.0_65\jre\lib\jfxswt.jar;E:\jdk1.8.0_65\jre\lib\jsse.jar;E:\jdk1.8.0_65\jre\lib\management-agent.jar;E:\jdk1.8.0_65\jre\lib\plugin.jar;E:\jdk1.8.0_65\jre\lib\resources.jar;E:\jdk1.8.0_65\jre\lib\rt.jar;D:\liutaowork\myweb\web\WEB-INF\classes;D:\liutaowork\myweb\web\WEB-INF\lib\c3p0-0.9.1.2.jar;D:\liutaowork\myweb\web\WEB-INF\lib\commons-logging-1.1.1.jar;D:\liutaowork\myweb\web\WEB-INF\lib\spring-aop-4.0.0.RELEASE.jar;D:\liutaowork\myweb\web\WEB-INF\lib\spring-core-4.0.0.RELEASE.jar;D:\liutaowork\myweb\web\WEB-INF\lib\spring-beans-4.0.0.RELEASE.jar;D:\liutaowork\myweb\web\WEB-INF\lib\spring-context-4.0.0.RELEASE.jar;D:\liutaowork\myweb\web\WEB-INF\lib\mysql-connector-java-5.1.7-bin.jar;D:\liutaowork\myweb\web\WEB-INF\lib\spring-expression-4.0.0.RELEASE.jar;E:\JetBrains\IntelliJ IDEA 2016.3.4\lib\idea_rt.jar
+java.vm.specification.version:1.8
+sun.arch.data.model:64
+java.home:E:\jdk1.8.0_65\jre
+sun.java.command:com.intellij.rt.execution.application.AppMain javase.collections.SystemDemo
+java.specification.vendor:Oracle Corporation
+user.language:zh
+awt.toolkit:sun.awt.windows.WToolkit
+java.vm.info:mixed mode
+java.version:1.8.0_65
+java.ext.dirs:E:\jdk1.8.0_65\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+sun.boot.class.path:E:\jdk1.8.0_65\jre\lib\resources.jar;E:\jdk1.8.0_65\jre\lib\rt.jar;E:\jdk1.8.0_65\jre\lib\sunrsasign.jar;E:\jdk1.8.0_65\jre\lib\jsse.jar;E:\jdk1.8.0_65\jre\lib\jce.jar;E:\jdk1.8.0_65\jre\lib\charsets.jar;E:\jdk1.8.0_65\jre\lib\jfr.jar;E:\jdk1.8.0_65\jre\classes
+java.vendor:Oracle Corporation
+file.separator:\
+java.vendor.url.bug:http://bugreport.sun.com/bugreport/
+sun.cpu.endian:little
+sun.io.unicode.encoding:UnicodeLittle
+sun.desktop:windows
+sun.cpu.isalist:amd64
