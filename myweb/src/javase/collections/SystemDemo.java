@@ -1,5 +1,7 @@
 package javase.collections;
 
+import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
@@ -11,10 +13,40 @@ import java.util.Set;
  */
 public class SystemDemo {
     public static void main(String [] args){
-        
+//        getSystemProp();
 
+//        runtimeDemo();
 
-        getSystemProp();
+        mathDemo();
+
+    }
+
+    private static void mathDemo() {
+        System.out.println(Math.PI);
+        //返回大于参数的最小double数
+        double d1 = Math.ceil(12.56);
+        //返回小于参数的最大double数
+        double d2 = Math.floor(12.56);
+        //返回四舍五入的double数
+        double d3 = Math.round(12.56);
+        System.out.println(d1);
+        System.out.println(d2);
+        System.out.println(d3);
+        //随机输出0-9
+        for(int i = 0;i< 10;i++){
+            System.out.println((int)Math.floor(Math.random()*10));
+        }
+
+    }
+
+    private static void runtimeDemo() {
+        Runtime r = Runtime.getRuntime();
+        try {
+            r.exec("notepad.exe");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
