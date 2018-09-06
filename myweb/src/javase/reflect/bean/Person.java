@@ -7,6 +7,11 @@ package javase.reflect.bean;
  * @date 2018/9/6
  */
 public class Person {
+    static {
+        System.out.println(" static {} run");
+    }
+
+
     private  String name;
     private  int age;
     public String haha;

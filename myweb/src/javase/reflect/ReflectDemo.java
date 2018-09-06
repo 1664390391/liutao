@@ -18,10 +18,7 @@ public class ReflectDemo {
         String classname = "javase.reflect.bean.Person";
         //通过类名反射得到该类的Class对象
         Class clazz = Class.forName(classname);
-        Class[] face = clazz.getInterfaces();
-        for (Class c : face) {
-            System.out.println(c);
-        }
+
 
 //  getClassDemo();
 //        getConstructorDemo();
