@@ -1,2 +1,13 @@
-*.class
+# Created by .ignore support plugin (hsz.mobi)
+
+*/*/target/
 .idea/
+*.iml
+**/rebel.xml
+**/*.iml
+
+*.class
+target/
+.project
+.settings/
+.classpath

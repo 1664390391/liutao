@@ -18,16 +18,16 @@ interface Inter{
     
 }
 
-interface A{int NUM = 1;}
-interface B{int NUM = 4;}
+interface A1{int NUM = 1;}
+interface B1{int NUM = 4;}
 
-class Test implements B,A{
+class Test implements B1,A1{
     //错误，和接口中的常量名称冲突，接口中常量默认省略public static final
 //    public static final NUM = 2;
 
 
     public static void main(String [] args){
-        System.out.println(B.NUM);
+        System.out.println(B1.NUM);
     }
 }
 

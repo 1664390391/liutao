@@ -14,12 +14,21 @@ import java.lang.reflect.Method;
 public class ReflectDemo {
 
     public static void main(String [] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException, NoSuchFieldException {
-//        getClassDemo();
+        //需要类的全路径，默认从src/bin目录寻找
+        String classname = "javase.reflect.bean.Person";
+        //通过类名反射得到该类的Class对象
+        Class clazz = Class.forName(classname);
+        Class[] face = clazz.getInterfaces();
+        for (Class c : face) {
+            System.out.println(c);
+        }
+
+//  getClassDemo();
 //        getConstructorDemo();
 //            getFieldDemo();
 //        getMethodDemo();
 //        testNoParam();
-        testNotNullParam();
+//        testNotNullParam();
     }
 
     private static void testNotNullParam() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
