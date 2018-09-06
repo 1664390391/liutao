@@ -1,4 +1,4 @@
-package myspring;
+package springstudy.myspring4.firsttest;
 
 /**
  * @author lt

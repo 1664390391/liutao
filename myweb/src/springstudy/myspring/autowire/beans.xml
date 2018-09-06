@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 测试根据名称自动装配 -->
+    <bean id="master" class="springstudy.myspring.autowire.Master" autowire="byName">
+        <property name="name" value="主任1"/>
+    </bean>
+
+    <bean id="dog" class="springstudy.myspring.autowire.Dog">
+        <property name="name"  value="旺财"/>
+        <property name="age"  value="2"/>
+    </bean>
+</beans>

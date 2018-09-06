@@ -1,4 +1,4 @@
-package myspring;
+package springstudy.myspring4.firsttest;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

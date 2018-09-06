@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- init-method="myinit" destroy-method="mydestroy" 自定义一些自己的小玩意方法 -->
+    <!--<bean id="BeanDemo" init-method="myinit" destroy-method="mydestroy" class="BeanDemo">-->
+        <!--<property name="name" value="wangcai"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="BeanDemo2" scope="prototype" class="BeanDemo">-->
+        <!--<property name="name" value="wangcai2"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 关联后置处理器，使用aop思想对每一个实例化的bean进行统一的操作/处理 &ndash;&gt;-->
+    <!--<bean id="myBeanPostProcessor"  class="MyBeanPostProcessor"/>-->
+
+    <!-- 测试通过构造函数注入值 -->
+    <bean id="beanDemo" class="springstudy.myspring.beanlife.BeanDemo">
+        <constructor-arg index="0" type="java.lang.String" value="我的" />
+    </bean>
+</beans>

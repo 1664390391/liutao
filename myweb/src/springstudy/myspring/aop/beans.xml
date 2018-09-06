@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 首先配置被代理的对象，也就是这里继承接口的Test1ServiceImpl -->
+<bean id="test1ServiceImpl" class="springstudy.myspring.aop.Test1ServiceImpl">
+    <property name="name" value="xiaoming"/>
+</bean>
+<!-- 配置前置通知，也就是说test1ServiceImpl在调用方法之前哪些代码需要执行。将需要执行的代码先配置 -->
+<bean id="myMethodBeforeAdvice" class="springstudy.myspring.aop.MyMethodBeforeAdvice"></bean>
+<!-- 配置环绕通知 -->
+<bean id="myMethodInterceptor" class="springstudy.myspring.aop.MyMethodInterceptor"></bean>
+<!-- 配置后置通知 -->
+<bean id="myAfterReturningAdvice" class="springstudy.myspring.aop.MyAfterReturningAdvice"></bean>
+<!-- 配置异常 -->
+<bean id="myThrowsAdvice" class="springstudy.myspring.aop.MyThrowsAdvice"></bean>
+<!-- 配置代理对象，也就是spring提供的一个代理的bean -->
+<bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <!-- 配置代理接口集，也就是我需要代理哪些接口 -->
+    <property name="proxyInterfaces">
+        <!-- 要代理的是一个接口集合，所有用list -->
+        <list>
+            <!-- 接口的全路径 -->
+            <value>springstudy.myspring.aop.TestService</value>
+            <value>springstudy.myspring.aop.Test2Service</value>
+        </list>
+    </property>
+    <!-- 把通知织入到代理对象，也就是说执行实现类方法之前哪些的前置代码，跟这个接口配置一下，作用相当于拦截器-->
+    <property name="interceptorNames">
+        <list>
+            <value>myMethodBeforeAdvice</value> <!-- 配置前置通知 -->
+            <value>myAfterReturningAdvice</value>   <!-- 配置后置通知 -->
+            <!-- 配置顺序不同影响了执行的结果 -->
+            <value>myMethodInterceptor</value>  <!-- 配置环绕通知 -->
+            <value>myThrowsAdvice</value>
+        </list>
+    </property>
+    <!-- 配置需要被代理的对象，引用配置好被代理对象的bean -->
+    <property name="target" ref="test1ServiceImpl"/>
+</bean>
+
+
+</beans>

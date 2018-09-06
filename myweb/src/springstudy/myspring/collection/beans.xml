@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department" class="springstudy.myspring.collection.Department">
+        <property name="departName" value="财务"></property>
+        <!-- 给数组注入 property标签中加list标签-->
+        <property name="employeeName">
+            <list>
+                <value>小明1</value>
+                <value>小明2</value>
+                <value>小明4</value>
+            </list>
+        </property>
+
+        <!-- 给list注入 property标签中加list标签-->
+        <property name="empList">
+            <list>
+
+                <ref bean="emp2"/>
+                <ref bean="emp1"/>
+                <ref bean="emp1"/>
+                <ref bean="emp1"/>
+            </list>
+        </property>
+
+
+        <!-- 给set注入 property标签中加set标签，set不可重复切序-->
+        <property name="empSet">
+            <set>
+                <ref bean="emp2"/>
+                <ref bean="emp1"/>
+                <ref bean="emp1"/>
+                <ref bean="emp1"/>
+            </set>
+        </property>
+
+        <!-- 给Map注入 property标签中加Map标签，需要配置key和value-->
+        <property name="empMap">
+           <map>
+               <entry key="1" value-ref="emp1"></entry>
+               <entry key="2" value-ref="emp2"></entry>
+           </map>
+        </property>
+
+    </bean>
+
+    <bean id="emp1" class="springstudy.myspring.collection.Employee">
+        <property name="name" value="雇员1"/>
+        <property name="id" value="111"/>
+    </bean>
+    <bean id="emp2" class="springstudy.myspring.collection.Employee">
+        <property name="name" value="雇员2"/>
+        <property name="id" value="222"/>
+    </bean>
+</beans>
