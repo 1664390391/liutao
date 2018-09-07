@@ -3,30 +3,49 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 配置helloworldbean -->
+    <!--
+        配置helloworldbean
+        class:bean的全类名，通过反射的方式在ioc容器中创建bean，所以要求bean中必须有无参数的构造器
+        id:用户标识bean，id唯一
+     -->
     <bean id="user" class="springstudy.myspring4.firsttest.User">
+        <!-- 通过set方法进行注入属性 -->
         <property name="name">
             <value>xiaoming</value>
         </property>
     </bean>
 
+    <bean id="user1" class="springstudy.myspring4.firsttest.User">
+        <!-- 通过构造方法进行初始化对象 ,使用index确定顺序-->
+        <constructor-arg value="xiaoming" index="0"></constructor-arg>
+        <constructor-arg value="20" index="1"></constructor-arg>
+    </bean>
+
+    <bean id="user2" class="springstudy.myspring4.firsttest.User">
+        <!-- 通过构造方法进行初始化对象，如果有重载现象，使用type来确定顺序 -->
+        <constructor-arg value="xiaoming" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="20" type="double"></constructor-arg>
+    </bean>
+
+
+    <!-- 韩顺平老师学习的spring部分代码 -->
     <!-- spring会实例化这个bean（创建一个bean对象）并自动装载到内存中去。-->
     <!-- 相当于：User user = new User() -->
-    <bean id="user1" class="springstudy.myspring.liutao.User">
-        <!-- 注入属性值，想当于：user.setname() -->
+   <!-- <bean id="myuser1" class="springstudy.myspring.liutao.User">
+        &lt;!&ndash; 注入属性值，想当于：user.setname() &ndash;&gt;
         <property name="name">
             <value>taoge</value>
         </property>
 
-        <!-- 引用其他bean,也就是维护bean与bean之间的关系
+        &lt;!&ndash; 引用其他bean,也就是维护bean与bean之间的关系
             其中name表示，user中一个属性的名称，叫做user2
             ref表示引用当前配置文件中名字叫user2的bean
-         -->
+         &ndash;&gt;
         <property name="user2" ref="user2"/>
     </bean>
 
-    <!-- 配置其他bean -->
-    <bean id="user2" class="springstudy.myspring.liutao.User2">
+    &lt;!&ndash; 配置其他bean &ndash;&gt;
+    <bean id="myuser2" class="springstudy.myspring.liutao.User2">
         <property name="name" value="我是user2"></property>
-    </bean>
+    </bean>-->
 </beans>
