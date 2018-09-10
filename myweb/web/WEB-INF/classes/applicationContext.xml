@@ -23,10 +23,17 @@
 
     <bean id="user2" class="springstudy.myspring4.firsttest.User">
         <!-- 通过构造方法进行初始化对象，如果有重载现象，使用type来确定顺序 -->
-        <constructor-arg value="xiaoming" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="xiaoming有车" type="java.lang.String"></constructor-arg>
         <constructor-arg value="20" type="double"></constructor-arg>
+        <property name="car" ref="car"></property>
+        <!-- 设置car的级联属性，注意必须car的初始化之后，才能对其类型赋值/更新 -->
+        <property name="car.name" value="AudiA6"></property>
     </bean>
 
+    <bean id="car" class="springstudy.myspring4.firsttest.Car">
+        <property name="name" value="Audi"></property>
+        <property name="speed" value="200.0"></property>
+    </bean>
 
     <!-- 韩顺平老师学习的spring部分代码 -->
     <!-- spring会实例化这个bean（创建一个bean对象）并自动装载到内存中去。-->

@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 /**
  * Created by 16643 on 2018/7/25.
  */
-public class MyMethodBeforeAdvice implements MethodBeforeAdvice {
+public class MyMethodBeforeAdvice /*implements MethodBeforeAdvice*/ {
 
     /**
      *
@@ -16,8 +16,8 @@ public class MyMethodBeforeAdvice implements MethodBeforeAdvice {
      * @param target 目标对象
      * @throws Throwable
      */
-    @Override
+    /*@Override
     public void before(Method method, Object[] objects, Object target) throws Throwable {
         System.out.println("记录日志:"+method);
-    }
+    }*/
 }

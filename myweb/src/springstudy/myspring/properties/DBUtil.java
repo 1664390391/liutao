@@ -1,4 +1,4 @@
-package springstudy.myspring.dispatch;
+package springstudy.myspring.properties;
 
 /**
  * Created by 16643 on 2018/7/22.
@@ -8,6 +8,16 @@ public class DBUtil {
     private String url;
     private String username;
     private String password;
+
+    @Override
+    public String toString() {
+        return "DBUtil{" +
+                "drivername='" + drivername + '\'' +
+                ", url='" + url + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
     public String getDrivername() {
         return drivername;

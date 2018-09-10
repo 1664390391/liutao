@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--
+        通过静态工厂方法配置bean，注意不是配置静态工厂方法的实例，而是配置bean实例
+        就是说这里是通过静态工厂的方法配置需要的类的对象，而不是配置静态工厂类的对象
+        class:静态方法的全类名
+        factory-method：指向静态工厂方法的名字
+        <constructor-arg:如果方法需要参数，使用该标签配置
+     -->
+    <bean id="car1" class="springstudy.myspring.factory.StaticCarFactory"
+        factory-method="getCar">
+        <constructor-arg value="Audi"></constructor-arg>
+    </bean>
+
+
+    <!-- 测试实例化工厂的实例化方法 -->
+    <!--1、配置工厂的实例 -->
+    <bean id="instanceCarFactory" class="springstudy.myspring.factory.InstanceCarFactory"></bean>
+
+    <!--
+        通过实例化之后的工厂对象，调用方法和参数，进行bean实例的返回
+        factory-bean:指向实例化工厂的bean
+        factory-method：调用实例化工厂方法的名字
+        <constructor-arg:如果方法需要参数，使用该标签配置
+    -->
+    <bean id="car2" factory-bean="instanceCarFactory" factory-method="getCar">
+        <constructor-arg value="Ford"></constructor-arg>
+    </bean>
+
+</beans>

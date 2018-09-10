@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 使用p命名空间为bean的属性赋值，首先要导入p命名空间xmlns:p="http://www.springframework.org/schema/p"
+         直接p:属性=“value”  这种方式配置更加简洁
+     -->
+    <bean id="department2" class="springstudy.myspring.collection.Department"
+          p:departName="测试P" p:empList-ref="lists" p:employeeName="测试P[]names">
+    </bean>
 
     <bean id="department" class="springstudy.myspring.collection.Department">
         <property name="departName" value="财务"></property>
@@ -15,15 +27,16 @@
         </property>
 
         <!-- 给list注入 property标签中加list标签-->
-        <property name="empList">
+     <!--   <property name="empList">
             <list>
-
                 <ref bean="emp2"/>
                 <ref bean="emp1"/>
                 <ref bean="emp1"/>
                 <ref bean="emp1"/>
             </list>
-        </property>
+        </property>-->
+        <property name="empList" ref="lists">
+         </property>
 
 
         <!-- 给set注入 property标签中加set标签，set不可重复切序-->
@@ -45,6 +58,16 @@
         </property>
 
     </bean>
+    <!-- 配置properties属性,常用于数据库连接等配置的使用-->
+    <bean id="dataSource" class="springstudy.myspring.collection.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">123</prop>
+                <prop key="jdbcUrl">jdbc:mysql://127.0.0.1:3306/liutao?characterEncoding=utf8</prop>
+            </props>
+        </property>
+    </bean>
 
     <bean id="emp1" class="springstudy.myspring.collection.Employee">
         <property name="name" value="雇员1"/>
@@ -54,4 +77,24 @@
         <property name="name" value="雇员2"/>
         <property name="id" value="222"/>
     </bean>
+
+    <!-- 导入命名空间xmlns:util="http://www.springframework.org/schema/util"
+      以及location ：http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       这样的优势就是类似于java中将方法抽象出来，可以被其他的bean共享
+      -->
+    <util:list id="lists">
+        <ref bean="emp2"/>
+        <ref bean="emp2"/>
+        <ref bean="emp2"/>
+        <ref bean="emp1"/>
+        <ref bean="emp1"/>
+        <ref bean="emp1"/>
+        <bean  class="springstudy.myspring.collection.Employee">
+            <property name="name" value="雇员xxxxx"/>
+            <property name="id" value="34234"/>
+        </bean>
+    </util:list>
+
+
 </beans>

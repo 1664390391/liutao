@@ -5,6 +5,9 @@ import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  * Created by 16643 on 2018/7/17.
  */
@@ -12,7 +15,7 @@ public class BeanDemo implements BeanNameAware,BeanFactoryAware,ApplicationConte
     private String name;
 
     public BeanDemo(){
-        System.out.println("第一步：配置的Bean对象被实例化到内存");
+        System.out.println("第一步：配置的Bean对象被实例化到内存，其实这个时候依赖的其他bean实例都已经完全加载完毕了");
     }
 
     public BeanDemo(String name){
@@ -53,8 +56,10 @@ public class BeanDemo implements BeanNameAware,BeanFactoryAware,ApplicationConte
 
     }
 
-//    @PostConstruct
+
+    @PostConstruct
     public void myinit(){
+        System.out.println("muinit run....");
         System.out.println("第八步（如果需要）：自己的init方法可以玩一玩，在设置完属性之后，并且在afterinit方法之前会执行这个");
 
     }
@@ -64,14 +69,15 @@ public class BeanDemo implements BeanNameAware,BeanFactoryAware,ApplicationConte
 
     }
 
+
     @Override
     public void destroy() throws Exception {
         System.out.println("这时候容器已经被关闭，该步骤看不到输出，但是会执行。第十一步（如果需要）：自带的destroy方法启动");
-
     }
 
-//    @PreDestroy
+    @PreDestroy
     public void mydestroy(){
+        System.out.println("mydestroy run....");
         System.out.println("这时候容器已经被关闭，该步骤看不到输出，但是会执行。第十二步（如果需要）：玩一玩自定得destroy()");
 
     }

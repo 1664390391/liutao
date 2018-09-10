@@ -33,5 +33,13 @@ public class App {
         for(Map.Entry<Integer,Employee> entry : d.getEmpMap().entrySet()){
             System.out.println("key="+entry.getKey()+"    ..value="+entry.getValue().getName());
         }
+
+        DataSource ds = (DataSource) ac.getBean("dataSource");
+        System.out.println(ds);
+
+        //测试p的命名空间，不过list打出的事hash值，toString()暂时没奏效
+        Department d2 = (Department) ac.getBean("department2");
+        System.out.println(d2);
+
     }
 }

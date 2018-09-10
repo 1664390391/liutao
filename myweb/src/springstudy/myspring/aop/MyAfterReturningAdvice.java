@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 /**
  * Created by 16643 on 2018/7/26.
  */
-public class MyAfterReturningAdvice implements AfterReturningAdvice {
+public class MyAfterReturningAdvice/* implements AfterReturningAdvice*/ {
 
     /**
      *
@@ -17,8 +17,8 @@ public class MyAfterReturningAdvice implements AfterReturningAdvice {
      * @param o1 目标对象
      * @throws Throwable
      */
-    @Override
+   /* @Override
     public void afterReturning(Object o, Method method, Object[] objects, Object o1) throws Throwable {
         System.out.println("关闭资源:"+method);
-    }
+    }*/
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <bean id="car" class="springstudy.myspring4.spel.Car">
+        <property name="name" value="Audi"></property>
+        <property name="speed" value="100"></property>
+    </bean>
+
+    <bean id="person" class="springstudy.myspring4.spel.Person">
+        <!-- 使用spel方式引用其他的bean -->
+        <property name="car" value="#{car}"></property>
+        <!-- 使用spel方式引用其他的bean中的属性 -->
+        <property name="addr" value="#{address.city}"></property>
+        <!-- 使用spel 中的运算服 -->
+        <property name="name" value="#{car.speed > 100 ? '快车' :'慢车'}"></property>
+
+    </bean>
+
+    <bean id="address" class="springstudy.myspring4.spel.Address">
+        <property name="city" value="Nanjing"></property>
+    </bean>
+</beans>

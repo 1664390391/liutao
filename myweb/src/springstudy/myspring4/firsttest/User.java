@@ -9,12 +9,11 @@ public class User {
     private String name;
     private int age;
     private double salary;
-
+    private Car car;
 
     User(){
         System.out.println("User constructor");
     }
-
 
     public User(String name, double salary) {
         System.out.println("constrcutor  User(String name, double salary) run");
@@ -37,21 +36,29 @@ public class User {
         this.name = name;
     }
 
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     public void sayhello(){
         System.out.println("hello..."+name);
     }
 
 
-
-
     @Override
     public String toString() {
-        System.out.println("toString run");
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
+                ", car=" + car +
                 '}';
     }
+
 
 }
