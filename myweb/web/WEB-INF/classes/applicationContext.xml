@@ -4,9 +4,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 配置helloworldbean -->
-    <bean id="user" class="myspring.User">
+    <bean id="user" class="springstudy.myspring4.firsttest.User">
         <property name="name">
             <value>xiaoming</value>
         </property>
+    </bean>
+
+    <!-- spring会实例化这个bean（创建一个bean对象）并自动装载到内存中去。-->
+    <!-- 相当于：User user = new User() -->
+    <bean id="user1" class="springstudy.myspring.liutao.User">
+        <!-- 注入属性值，想当于：user.setname() -->
+        <property name="name">
+            <value>taoge</value>
+        </property>
+
+        <!-- 引用其他bean,也就是维护bean与bean之间的关系
+            其中name表示，user中一个属性的名称，叫做user2
+            ref表示引用当前配置文件中名字叫user2的bean
+         -->
+        <property name="user2" ref="user2"/>
+    </bean>
+
+    <!-- 配置其他bean -->
+    <bean id="user2" class="springstudy.myspring.liutao.User2">
+        <property name="name" value="我是user2"></property>
     </bean>
 </beans>

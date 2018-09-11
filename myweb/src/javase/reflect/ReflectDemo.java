@@ -1,5 +1,7 @@
 package javase.reflect;
 
+import javase.reflect.bean.Person;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -17,7 +19,11 @@ public class ReflectDemo {
         //需要类的全路径，默认从src/bin目录寻找
         String classname = "javase.reflect.bean.Person";
         //通过类名反射得到该类的Class对象
-        Class clazz = Class.forName(classname);
+//        Class clazz = Class.forName(classname);
+        Person p = new Person();
+//        Class clazz = Person.class;
+        Class clazz = p.getClass();
+
 
 
 //  getClassDemo();
