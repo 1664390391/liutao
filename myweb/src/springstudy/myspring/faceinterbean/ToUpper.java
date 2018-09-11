@@ -1,4 +1,4 @@
-package springstudy.myspring.didemo;
+package springstudy.myspring.faceinterbean;
 
 /**
  * Created by 16643 on 2018/7/16.

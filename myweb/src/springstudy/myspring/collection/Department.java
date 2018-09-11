@@ -1,5 +1,6 @@
 package springstudy.myspring.collection;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,6 +13,7 @@ public class Department {
     private String [] employeeName;
     private List<Employee> empList;
     private Set<Employee> empSet;
+    private Map<Integer,Employee> empMap;
 
     public Map<Integer, Employee> getEmpMap() {
         return empMap;
@@ -20,8 +22,6 @@ public class Department {
     public void setEmpMap(Map<Integer, Employee> empMap) {
         this.empMap = empMap;
     }
-
-    private Map<Integer,Employee> empMap;
 
     public String getDepartName() {
         return departName;
@@ -46,6 +46,18 @@ public class Department {
     public void setEmpList(List<Employee> empList) {
         this.empList = empList;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "departName='" + departName + '\'' +
+                ", employeeName=" + Arrays.toString(employeeName) +
+                ", empList=" + empList +
+                ", empSet=" + empSet +
+                ", empMap=" + empMap +
+                '}';
+    }
+
     public Set<Employee> getEmpSet() {
         return empSet;
     }

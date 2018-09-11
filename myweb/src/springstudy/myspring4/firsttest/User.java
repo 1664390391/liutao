@@ -6,11 +6,26 @@ package springstudy.myspring4.firsttest;
  */
 public class User {
 
+    private String name;
+    private int age;
+    private double salary;
+    private Car car;
+
     User(){
         System.out.println("User constructor");
     }
 
-    private String name;
+    public User(String name, double salary) {
+        System.out.println("constrcutor  User(String name, double salary) run");
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public User(String name, int age) {
+        System.out.println("constrcutor  User(String name, int age) run");
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -21,7 +36,29 @@ public class User {
         this.name = name;
     }
 
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     public void sayhello(){
         System.out.println("hello..."+name);
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", car=" + car +
+                '}';
+    }
+
+
 }

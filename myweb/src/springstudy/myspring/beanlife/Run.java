@@ -8,8 +8,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Run {
     public static void main(String [] args){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("springstudy/myspring/beanlife/beans.xml");
-//        BeanDemo beanDemo = (BeanDemo) ac.getBean("beanDemo");
-//        beanDemo.run();
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("springstudy/myspring/beanlife/beans.xml");
+        BeanDemo beanDemo = (BeanDemo) ac.getBean("beanDemo");
+        beanDemo.run();
+        //关闭IOC容器，ApplicationContext类中没有，其子类有
+        ac.close();
+
     }
 }
