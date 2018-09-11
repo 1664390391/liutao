@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 指定IOC容器扫描的包
+     以及其子包，所有标识注解的类，都将被IOC容器进行管理
+     resource-pattern="test/*.class"
+     -->
+    <context:component-scan base-package="springstudy.myspring.annotation"
+                           >
+        <!-- 指定排除哪些指定表达式的组件，根据注解的类型进行指定 -->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+        <!-- 和上述过滤的方式一样，换一个形式，由指定注解类型过滤变换到指定特定的类过滤(这里是接口及其接口的实现类) -->
+        <!--<context:exclude-filter type="assignable" expression="springstudy.myspring.annotation.service.UserService"></context:exclude-filter>-->
+        <!-- use-default-filters=true:默认使用自带的过滤器，扫描base-package中所有的包，这里如果想使用include-filter标签
+         指定自定义想扫描的文件，那么就要指定use-default-filters=false
+         -->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+    </context:component-scan>
+
+
+
+</beans>

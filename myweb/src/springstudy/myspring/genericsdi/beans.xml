@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 指定IOC容器扫描的包
+     以及其子包，所有标识注解的类，都将被IOC容器进行管理
+     resource-pattern="test/*.class"
+     -->
+    <context:component-scan base-package="springstudy.myspring.genericsdi">
+    </context:component-scan>
+
+
+
+</beans>
