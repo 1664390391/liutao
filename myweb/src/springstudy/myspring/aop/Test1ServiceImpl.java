@@ -21,6 +21,11 @@ public class Test1ServiceImpl implements TestService,Test2Service {
     }
 
     @Override
+    public int add(int i, int j) {
+        return i+j;
+    }
+
+    @Override
     public void sayByeBye() {
         System.out.println("sayByeBye:"+name);
         int i = 9/0;

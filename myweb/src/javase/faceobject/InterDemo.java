@@ -23,11 +23,19 @@ class InterTest{
 }
 
 public class InterDemo {
+
+    public static int num = 2;
+
     public static void main(String [] args){
+        final int num2 = 5;
         InterTest interTest1 = new InterTest("aa",1);
 
         InterTest interTest2 = new InterTest("bb",2);
         System.out.println(interTest1.toString());
         System.out.println(interTest2.toString());
+
+
     }
+
+
 }
