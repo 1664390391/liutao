@@ -1,12 +1,11 @@
-package springstudy.myspring4.spring4_aop;
+package springstudy.myspring4.spring4_aopbyxml;
 
 import org.springframework.stereotype.Component;
 
 /**
  * Created by 16643 on 2018/7/25.
  */
-@Component()
-public class TestServiceImpl1 implements TestService {
+public class TestServiceImpl2 implements TestService {
 
 
     @Override

@@ -1,13 +1,9 @@
-package springstudy.myspring4.spring4_aop;
+package springstudy.myspring4.spring4_aopbyanno;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * details:
@@ -21,9 +17,17 @@ import java.util.List;
 @Component
 public class AspectJDemo {
 
+
+    /**
+     * 定义一个方法，生命切入点表达式，也就是
+     */
+    @Pointcut("execution(* springstudy.myspring4.spring4_aopbyanno.*.*(..))")
+    public void declareJointPointExpression(){}
+
+
     //声明该方法是一个前置通知，在目标方法开始之前执行。
     //joinPoint参数表示一些细节
-//    @Before("execution(* springstudy.myspring4.spring4_aop.*.*(..))")
+//    @Before("execution(* springstudy.myspring4.spring4_aopbyanno.*.*(..))")
 //    public void beforeMethod(JoinPoint joinPoint){
 //        String methodName = joinPoint.getSignature().getName();
 //        List<Object> args = Arrays.asList(joinPoint.getArgs());
@@ -31,7 +35,7 @@ public class AspectJDemo {
 //    }
 //
 //    //后置通知，方法执行之后执行（无论是否出现异常都会被执行），但是这时还不能访问目标方法的结果，因为这个在方法结果之前执行
-//    @After("execution(* springstudy.myspring4.spring4_aop.*.*(..))")
+//    @After("execution(* springstudy.myspring4.spring4_aopbyanno.*.*(..))")
 //    public void afterMethod(JoinPoint joinPoint){
 //        String methodName = joinPoint.getSignature().getName();
 //        List<Object> args = Arrays.asList(joinPoint.getArgs());
@@ -43,7 +47,7 @@ public class AspectJDemo {
      * @param joinPoint
      * @param result
      */
-//    @AfterReturning(value = "execution(* springstudy.myspring4.spring4_aop.*.*(..))",returning = "result")
+//    @AfterReturning(value = "execution(* springstudy.myspring4.spring4_aopbyanno.*.*(..))",returning = "result")
 //    public void afterReturnMethod(JoinPoint joinPoint,Object result){
 //        String methodName = joinPoint.getSignature().getName();
 //        List<Object> args = Arrays.asList(joinPoint.getArgs());
@@ -55,7 +59,7 @@ public class AspectJDemo {
      * @param joinPoint
      * @param e : 异常的类型，可以定义最大范围Exception,也可以自定义
      */
-    @AfterThrowing(value = "execution(* springstudy.myspring4.spring4_aop.*.*(..))",throwing = "e")
+    @AfterThrowing(value = "declareJointPointExpression()",throwing = "e")
     public void afterReturnMethod(JoinPoint joinPoint,Exception e){
         System.out.println("使用AspectJ方式测试异常通知方法出现的异常 ："+e);
     }
@@ -65,7 +69,7 @@ public class AspectJDemo {
      * @param pjd 必须要携带该类型参数
      * @return 必须有返回值
      */
-   /* @Around("execution(* springstudy.myspring4.spring4_aop.*.*(..))")
+   /* @Around("execution(* springstudy.myspring4.spring4_aopbyanno.*.*(..))")
     public Object aroundMethod(ProceedingJoinPoint pjd){
         Object result = null;
         try {

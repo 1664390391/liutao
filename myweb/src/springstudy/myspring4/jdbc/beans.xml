@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+    <!-- 扫描注解 -->
+    <context:component-scan base-package="springstudy.myspring4.jdbc"></context:component-scan>
+    <!--spring2.5之后配置方式,导入资源文件 -->
+    <context:property-placeholder location="classpath:springstudy/myspring4/jdbc/db.properties" />
+
+    <!-- 配置bean -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${db.dirverClass}"/>
+        <property name="jdbcUrl" value="${db.url}"/>
+        <property name="user" value="${db.user}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="initialPoolSize" value="${db.initPoolSize}"/>
+        <property name="maxPoolSize" value="${db.maxPoolSize}"/>
+     </bean>
+
+    <!-- 配置Spring链接jdbc的模板 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 配置事务管理的数据原 -->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!-- 开启事务,配置注解驱动 -->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+</beans>

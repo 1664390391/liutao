@@ -1,4 +1,4 @@
-package springstudy.myspring4.spring4_aop;
+package springstudy.myspring4.spring4_aopbyanno;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Run {
     public static void main(String [] args){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("springstudy/myspring4/spring4_aop/beans.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("springstudy/myspring4/spring4_aopbyanno/beans.xml");
 
         TestService ts = (TestService) ac.getBean("testServiceImpl1");
 

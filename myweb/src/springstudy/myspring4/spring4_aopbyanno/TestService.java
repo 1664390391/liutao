@@ -1,4 +1,4 @@
-package springstudy.myspring4.spring4_aop;
+package springstudy.myspring4.spring4_aopbyanno;
 
 /**
  * Created by 16643 on 2018/7/25.
