@@ -1,11 +1,8 @@
-package springstudy.myspring4.jdbc;
+package springstudy.myspring4.jdbcbyanno;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import springstudy.myspring.properties.Run;
 
 /**
  * details:测试spring链接jdbc
@@ -19,7 +16,7 @@ public class JDBDTest {
     private JdbcTemplate jdbcTemplate = null;
     private JdbcService jbdcService;
     {
-        ac = new ClassPathXmlApplicationContext("springstudy/myspring4/jdbc/beans.xml");
+        ac = new ClassPathXmlApplicationContext("springstudy/myspring4/jdbcbyanno/beans.xml");
         jdbcTemplate = (JdbcTemplate) ac.getBean("jdbcTemplate");
         //IOC中只有jdbcServiceImpl名字的bean，但是这里可以使用多态的方式来实现
         jbdcService = (JdbcService) ac.getBean("jdbcServiceImpl");

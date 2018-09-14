@@ -1,4 +1,4 @@
-package springstudy.myspring4.jdbc;
+package springstudy.myspring4.jdbcbyxml;
 
 /**
  * details:

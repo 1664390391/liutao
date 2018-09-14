@@ -9,9 +9,9 @@
 
 
     <!-- 扫描注解 -->
-    <context:component-scan base-package="springstudy.myspring4.jdbc"></context:component-scan>
+    <context:component-scan base-package="springstudy.myspring4.jdbcbyanno"></context:component-scan>
     <!--spring2.5之后配置方式,导入资源文件 -->
-    <context:property-placeholder location="classpath:springstudy/myspring4/jdbc/db.properties" />
+    <context:property-placeholder location="classpath:springstudy/myspring4/jdbcbyanno/db.properties" />
 
     <!-- 配置bean -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

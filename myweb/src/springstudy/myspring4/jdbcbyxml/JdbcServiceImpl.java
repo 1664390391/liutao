@@ -1,8 +1,7 @@
-package springstudy.myspring4.jdbc;
+package springstudy.myspring4.jdbcbyxml;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,10 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
  * @author lt
  * @date 2018/9/13
  */
-@Repository
 public class JdbcServiceImpl implements JdbcService {
-    @Autowired
+
     private JdbcTemplate jdbcTemplate;
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     /**
      * 测试转账， 002号+100,001号-100，最基本的事务
@@ -26,9 +28,8 @@ public class JdbcServiceImpl implements JdbcService {
      * @param money
      */
     @Override
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void testAccountUpdate(int money) {
-        String sql2 = "update account1 set money = money + ?  where id = ?";
+        String sql2 = "update account set money = money + ?  where id = ?";
         jdbcTemplate.update(sql2,money,002);
 
         //先检查账户余额是否足够，若不够，则提示
@@ -44,12 +45,25 @@ public class JdbcServiceImpl implements JdbcService {
     /**
      * 测试多个事务的事务传播,默认类型,走同一个事务
      */
-    @Transactional
     @Override
     public void testMoreAccountTransaction(int count) {
         for(int i = 0;i< count;i++){
-            testAccountUpdate(1000);
+            testPrivateAccountUpdate(1000);
         }
+    }
+
+    public void testPrivateAccountUpdate(int money) {
+        String sql2 = "update account set money = money + ?  where id = ?";
+        jdbcTemplate.update(sql2,money,002);
+
+        //先检查账户余额是否足够，若不够，则提示
+        String checkSql = "select money from account where id = ?";
+        int balance = jdbcTemplate.queryForObject(checkSql,Integer.class,001);
+        if( balance < money){
+            throw new RuntimeException("余额不足");
+        }
+        String sql1 = "update account set money = money - ?  where id = ?";
+        jdbcTemplate.update(sql1,money,001);
     }
 
 
