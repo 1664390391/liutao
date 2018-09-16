@@ -8,7 +8,10 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
- * details:
+ * details:在web中使用spring的基本思路
+ * 配置好相关参数之后。web项目每次加载的时候都会使用拦截器执行当前类的初始化方法
+ * 初始化完成之后spring的基本配置已经放置在servletContext的域对象中了，只要servlet得到属性并调用相关方法即可
+ * 但是实际开发中还是spring mvc整合，不需要使用servelt
  *
  * @author lt
  * @date 2018/9/14
