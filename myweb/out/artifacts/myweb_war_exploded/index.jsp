@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>涛哥的index.jsp</title>
   </head>
   <body>
-  $END$
+      <a href="toSuccessPage"><h1>toSuccessPage</h1></a>
   </body>
 </html>

@@ -12,3 +12,4 @@ target/
 .settings/
 .classpath
 myweb/web/WEB-INF/classes/
+myweb/out/

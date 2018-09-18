@@ -3,4 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!-- 配置Spring配置文件的名称和位置，不需要写在 SpringServletContextListener里面的代码中，可以动态配置  -->
+    <context-param>
+        <param-name>configLocation</param-name>
+        <param-value>classpath:springstudy.myspring4.webdemo.beans.xml</param-value>
+    </context-param>
+
+
+
+    <!-- 配置一个监听器SpringServletContextListener,测试简单的spring在web项目中的使用 -->
+    <listener>
+        <listener-class>springstudy.myspring4.webdemo.listener.SpringServletContextListener</listener-class>
+    </listener>
+
+
+   <!-- &lt;!&ndash; 测试配置springmvc的helloworld &ndash;&gt;
+    <servlet>
+        <servlet-name>springDispatcherServlet1</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 配置DispatcherServlet的一个初始化参数，配置springmvc配置文件的位置和名称 &ndash;&gt;
+        <init-param>
+            <param-name>configLocation</param-name>
+            <param-value>classpath:springstudy.myspringmvc.firsttest.springmvc.xml</param-value>
+        </init-param>
+        &lt;!&ndash; 加载顺序，1表示当前servlet被加载的时候创建，而不是等第一次请求的时候才创建，详细顺序需要深入了解 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springDispatcherServlet1</servlet-name>
+        &lt;!&ndash; 配置servlet可以应答所有请求，这里配置那些请求可以给到名字叫springDispatcherServlet1的servlet &ndash;&gt;
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>-->
+
 </web-app>

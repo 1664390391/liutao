@@ -16,4 +16,25 @@
     <listener>
         <listener-class>springstudy.myspring4.webdemo.listener.SpringServletContextListener</listener-class>
     </listener>
+
+
+    <!-- 测试配置springmvc的helloworld -->
+    <servlet>
+        <servlet-name>springDispatcherServlet1</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置DispatcherServlet的一个初始化参数，配置springmvc配置文件的位置和名称 -->
+        <init-param>
+            <param-name>configLocation</param-name>
+            <param-value>classpath:springstudy.myspringmvc.firsttest.springmvc.xml</param-value>
+        </init-param>
+        <!-- 加载顺序，1表示当前servlet被加载的时候创建，而不是等第一次请求的时候才创建，详细顺序需要深入了解 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springDispatcherServlet1</servlet-name>
+        <!-- 配置servlet可以应答所有请求，这里配置那些请求可以给到名字叫springDispatcherServlet1的servlet -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
 </web-app>
