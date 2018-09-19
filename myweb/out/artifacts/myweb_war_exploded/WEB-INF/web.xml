@@ -7,7 +7,7 @@
     <!-- 配置Spring配置文件的名称和位置，不需要写在 SpringServletContextListener里面的代码中，可以动态配置  -->
     <context-param>
         <param-name>configLocation</param-name>
-        <param-value>classpath:springstudy.myspring4.webdemo.beans.xml</param-value>
+        <param-value>classpath:springstudy/myspring4/webdemo/beans.xml</param-value>
     </context-param>
 
 
@@ -18,23 +18,38 @@
     </listener>
 
 
-   <!-- &lt;!&ndash; 测试配置springmvc的helloworld &ndash;&gt;
+    <!-- 测试配置springmvc的helloworld -->
     <servlet>
         <servlet-name>springDispatcherServlet1</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        &lt;!&ndash; 配置DispatcherServlet的一个初始化参数，配置springmvc配置文件的位置和名称 &ndash;&gt;
+        <!-- 配置DispatcherServlet的一个初始化参数，配置springmvc配置文件的位置和名称 -->
+        <!-- 实际上也可以不使用contextConfigLocation配置springmvc.xml，而使用默认的配置文件路径
+            /WEB-INF/<servlet-name>-servlet.xml。例如现在的就是springDispatcherServlet1-servlet.xml。配置和springmvc.xml中一样的配置即可-->
         <init-param>
-            <param-name>configLocation</param-name>
-            <param-value>classpath:springstudy.myspringmvc.firsttest.springmvc.xml</param-value>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springstudy/myspringmvc/firsttest/springmvc.xml</param-value>
         </init-param>
-        &lt;!&ndash; 加载顺序，1表示当前servlet被加载的时候创建，而不是等第一次请求的时候才创建，详细顺序需要深入了解 &ndash;&gt;
+        <!-- 加载顺序，1表示当前servlet被加载的时候创建，而不是等第一次请求的时候才创建，详细顺序需要深入了解 -->
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>springDispatcherServlet1</servlet-name>
-        &lt;!&ndash; 配置servlet可以应答所有请求，这里配置那些请求可以给到名字叫springDispatcherServlet1的servlet &ndash;&gt;
+        <!-- 配置servlet可以应答所有请求，这里配置那些请求可以给到名字叫springDispatcherServlet1的servlet -->
         <url-pattern>/</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
+
+
+    <!-- 配置HiddenHttpMethodFilter,可以将POST请求转化为DELETE/PUT -->
+    <filter>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <!-- 过滤所有的请求 -->
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>
