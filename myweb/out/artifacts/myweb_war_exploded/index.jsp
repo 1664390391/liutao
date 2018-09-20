@@ -12,6 +12,17 @@
   </head>
   <body>
 
+  <a href="modelDemo/testModelMap"><h3>testModelMap</h3></a>
+  <a href="modelDemo/testModelAndView"><h3>testModelAndView</h3></a>
+
+  <form action="modelDemo/testModel" method="post">
+    name:<input name="name"><br/>
+    age:<input name="age" ><br/>
+    province:<input name="address.province" ><br/>
+    city:<input name="address.city"><br/>
+    <input type="submit" value="testModel"><br/>
+  </form>
+
 
     <a href="requestMappingDemo/testRequestParam?username=aaa&age=11"><h3>testRequestParam</h3></a>
 
