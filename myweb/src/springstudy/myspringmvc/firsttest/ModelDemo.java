@@ -38,15 +38,15 @@ public class ModelDemo {
 
 
     /**
-     * 测试一个简单的model类以及级联属性
-     * @param user
+     * 测试一个简单的自定义视图
      * @return
      */
-    @RequestMapping("testModel")
-    public String testModel(User user){
-        System.out.println("user = "+user);
-        return "success";
+    @RequestMapping("testCustomView")
+    public String testCustomView(){
+        //为什么是开头是小写，我猜测是根据自动装配的bean的name来找的
+        return "customView";
     }
+
 
     /**
      * 测试modelandview类型

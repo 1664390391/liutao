@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -16,5 +17,9 @@
 <h3 style="color: green">sessionScope_time:${sessionScope.time}</h3>
 <h3 style="color: green">requestScope_name:${requestScope.name}</h3>
 <h3 style="color: green">sessionScope_name:${sessionScope.name}</h3>
+
+
+<h3 style="color: green"><fmt:message key="i18n.username"></fmt:message></h3>
+<h3 style="color: green"><fmt:message key="i18n.password"></fmt:message></h3>
 </body>
 </html>

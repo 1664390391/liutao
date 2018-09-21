@@ -12,6 +12,15 @@
   </head>
   <body>
 
+  <a href="requestMappingDemo/testMVCRedirect"><h3>testMVCRedirect</h3></a>
+  <a href="requestMappingDemo/testsendRedirect"><h3>testsendRedirect</h3></a>
+  <a href="requestMappingDemo/testRequestDispatcher"><h3>testRequestDispatcher</h3></a>
+
+
+
+  <a href="modelDemo/testCustomView"><h3>testCustomView</h3></a>
+
+
   <a href="modelDemo/testModelMap"><h3>testModelMap</h3></a>
   <a href="modelDemo/testModelAndView"><h3>testModelAndView</h3></a>
 

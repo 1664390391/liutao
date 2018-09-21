@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * details:
@@ -65,4 +68,61 @@ public class RequestMappingDemo {
         System.out.println("testPostMethod() run ");
         return  "firsttest/success";
     }
+
+
+    /**
+     * 测试服务器内部的转发
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/testRequestDispatcher")
+    public void testRequestDispatcher(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("开始转发");
+        try {
+            //内部转发，使用同一个请求，带上目前的请求和响应数据
+            request.getRequestDispatcher("/success").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("结束转发");
+
+    }
+
+    /**
+     * 测试重定向
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/testsendRedirect")
+    public void testsendRedirect(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("开始重定向");
+        try {
+            //在响应信息中，告诉客户端你需要重新请求
+//            response.sendRedirect("/success");
+            String s = request.getContextPath();
+            response.sendRedirect(s+"/success");
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("结束重定向");
+
+    }
+
+    /**
+     * 上述两个只是简单的使用Servlet的request和response进行转发和重定向
+     * 在默认情况下，客户端请求在后台都是执行的转发，这里测试mvc中的重定向
+     */
+    @RequestMapping("/testMVCRedirect")
+    public String testMVCRedirect(){
+        System.out.println("开始MVC重定向");
+        //这里目前还不支持任意重定向位置，不知道是为嘛..
+        return "redirect:/success";
+
+    }
+
+
+
+
 }

@@ -22,7 +22,23 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <!-- 配置自定义视图解析器,默认是视图解析器优先级最低，这边随便配置都可以 -->
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="1"></property>
+    </bean>
 
 
+    <!-- 配置国际化资源文件 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="springstudy.myspringmvc.i18n"></property>
+    </bean>
+
+
+    <!-- 配置直接可以转发的页面，无需经过handler的方法 ，但是仅仅配这个正常经过处理器的方法就不能够使用了-->
+    <!-- path:浏览器的路径  view-name： 项目中的页面-->
+    <mvc:view-controller path="/success" view-name="firsttest/success"></mvc:view-controller>
+
+    <!-- 接上：所以实际开发中，通常需要配置<mvc:annotation-driven -->
+    <mvc:annotation-driven ></mvc:annotation-driven>
 
 </beans>
