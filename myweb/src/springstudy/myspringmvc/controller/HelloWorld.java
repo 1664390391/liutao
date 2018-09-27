@@ -1,4 +1,4 @@
-package springstudy.myspringmvc.firsttest;
+package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +24,7 @@ public class HelloWorld {
     @RequestMapping("/toSuccessPage")
     public String hello(){
         System.out.println("hello world");
-        return "firsttest/success";
+        return "controller/success";
     }
 
 

@@ -1,4 +1,4 @@
-package springstudy.myspringmvc.firsttest;
+package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

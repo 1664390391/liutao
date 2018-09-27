@@ -22,4 +22,10 @@
 <h3 style="color: green"><fmt:message key="i18n.username"></fmt:message></h3>
 <h3 style="color: green"><fmt:message key="i18n.password"></fmt:message></h3>
 </body>
+<script type="text/javascript" src="/WEB-ROOT/js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function () {
+        alert("hello jquery!");
+    })
+</script>
 </html>

@@ -16,18 +16,16 @@ public class ArrayListDemo {
 //        list.add(new Zi());
 //        list.get(1).show();
 
-//        List<String> list = new ArrayList<>();
-//        list.add("ss");
-//        list.add("vv");
-//        list.add("qq");
-//        list.add("11");
-//        list.add("99");
-//        list.add("22");
-//        list.add("aa");
-//        list.add("dd");
-//        for (String s : list) {
-//            System.out.println(s);
-//        }
+        List<String> list = new ArrayList<>();
+        list.add("ss");
+        list.add("vv");
+        list.add("qq");
+        list.add("11");
+        list.add("99");
+        list.add("22");
+        list.add("aa");
+        list.add("dd");
+        System.out.println(list.subList(0,10));
 
 
 //        List<Fu> list = Arrays.asList(new Zi1());

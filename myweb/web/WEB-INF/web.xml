@@ -27,7 +27,7 @@
             /WEB-INF/<servlet-name>-servlet.xml。例如现在的就是springDispatcherServlet1-servlet.xml。配置和springmvc.xml中一样的配置即可-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springstudy/myspringmvc/firsttest/springmvc.xml</param-value>
+            <param-value>classpath:springstudy/myspringmvc/controller/springmvc.xml</param-value>
         </init-param>
         <!-- 加载顺序，1表示当前servlet被加载的时候创建，而不是等第一次请求的时候才创建，详细顺序需要深入了解 -->
         <load-on-startup>1</load-on-startup>

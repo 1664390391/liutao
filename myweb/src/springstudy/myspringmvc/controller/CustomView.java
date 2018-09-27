@@ -1,11 +1,10 @@
-package springstudy.myspringmvc.firsttest;
+package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;

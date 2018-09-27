@@ -1,6 +1,5 @@
-package springstudy.myspringmvc.firsttest;
+package springstudy.myspringmvc.controller;
 
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +32,7 @@ public class RequestMappingDemo {
                                    @RequestParam(value = "age",required = false,defaultValue = "-1") int age,HttpServletRequest request){
         System.out.println("testRequestParam , username="+username+",age="+age);
         Object s = request.getAttribute("username");
-        return  "firsttest/success";
+        return  "controller/success";
     }
 
 
@@ -45,7 +44,7 @@ public class RequestMappingDemo {
     @RequestMapping(value = "testPathVariable/{id}")
     public String testPathVariable(@PathVariable("id") String id){
         System.out.println("testPathVariable_id="+id);
-        return  "firsttest/success";
+        return  "controller/success";
     }
 
     /**
@@ -56,7 +55,7 @@ public class RequestMappingDemo {
      */
     @RequestMapping(value = "testParamsAndHeadsMethod",params = {"username","age!=10"})
     public String testParamsAndHeadsMethod(HttpServletRequest request){
-        return  "firsttest/success";
+        return  "controller/success";
     }
 
     /**
@@ -66,7 +65,17 @@ public class RequestMappingDemo {
     @RequestMapping(value = "testPostMethod",method = RequestMethod.POST)
     public String testPostMethod(){
         System.out.println("testPostMethod() run ");
-        return  "firsttest/success";
+        return  "controller/success";
+    }
+
+    /**
+     * 常用属性：测试参数的传递
+     * @return
+     */
+    @RequestMapping(value = "testParamTransferMethod")
+    public String testParamTransferMethod(String id){
+        System.out.println("testParamTransferMethod() run , and id = "+ id);
+        return  "controller/success";
     }
 
 

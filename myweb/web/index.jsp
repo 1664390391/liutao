@@ -21,7 +21,7 @@
   <a href="modelDemo/testCustomView"><h3>testCustomView</h3></a>
 
 
-  <a href="modelDemo/testModelMap"><h3>testModelMap</h3></a>
+  <a href="modelDemo/testModelMap"><h1>testModelMap</h1></a>
   <a href="modelDemo/testModelAndView"><h3>testModelAndView</h3></a>
 
   <form action="modelDemo/testModel" method="post">
@@ -62,7 +62,7 @@
       <input type="submit" value="testPostMethodButton">
     </form>
     <br/>
-    <a href="requestMappingDemo/testPostMethod"><h3>testPostMethod</h3></a>
+    <a href="requestMappingDemo/testParamTransferMethod?id=32"><h3>testParamTransferMethod</h3></a>
     <br/>
     <a href="toSuccessPage"><h3>toSuccessPage</h3></a>
   </body>

@@ -1,15 +1,13 @@
-package springstudy.myspringmvc.firsttest;
+package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import springstudy.myspringmvc.bean.User;
 
 import java.util.Date;
-import java.util.Map;
 
 
 /**
@@ -57,7 +55,7 @@ public class ModelDemo {
      */
     @RequestMapping("testModelAndView")
     public ModelAndView testModelAndView(){
-        ModelAndView mv = new ModelAndView("firsttest/success");
+        ModelAndView mv = new ModelAndView("controller/success");
         mv.addObject("time",new Date());
         mv.addObject("user",new User());
         return mv;
@@ -76,7 +74,7 @@ public class ModelDemo {
 //        map.put("name","xiaoming");
         map.addAttribute("name","xiaoming");
         map.addAttribute("time",new Date());
-        return "firsttest/success";
+        return "controller/success";
     }
 
 
