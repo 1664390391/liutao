@@ -77,7 +77,16 @@ public class ModelDemo {
         return "controller/success";
     }
 
+    @RequestMapping("toLogin")
+    public String toLogin(){
+        return "login";
+    }
 
+
+    @RequestMapping("saveUser")
+    public void saveUser(User user){
+        System.out.println(user);
+    }
 
 
 

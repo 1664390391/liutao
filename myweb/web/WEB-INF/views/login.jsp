@@ -12,15 +12,12 @@
   </head>
   <body>
 
-    <form action="modelDemo/testModel" method="post">
+    <%--<form action="${pageContext}/saveUser" method="post">modelDemo--%>
+    <form action="${pageContext.request.contextPath}/modelDemo/saveUser" method="post">
       name:<input name="name"><br/>
       age:<input name="age" ><br/>
-      province:<input name="address.province" ><br/>
-      city:<input name="address.city"><br/>
-      <input type="submit" value="login"><br/>
+      <input type="submit" value="提交并login"><br/>
     </form>
-
-    <a href="modelDemo/login"><h3>Login.jsp</h3></a>
 
   </body>
 </html>

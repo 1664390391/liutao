@@ -18,10 +18,13 @@
 
 
 
+  <a href="modelDemo/toLogin"><h3>toLogin</h3></a>
+
+
   <a href="modelDemo/testCustomView"><h3>testCustomView</h3></a>
 
 
-  <a href="modelDemo/testModelMap"><h1>testModelMap</h1></a>
+  <a href="modelDemo/testModelMap"><h3>testModelMap</h3></a>
   <a href="modelDemo/testModelAndView"><h3>testModelAndView</h3></a>
 
   <form action="modelDemo/testModel" method="post">
