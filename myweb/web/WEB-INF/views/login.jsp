@@ -16,6 +16,7 @@
     <form action="${pageContext.request.contextPath}/modelDemo/saveUser" method="post">
       name:<input name="name"><br/>
       age:<input name="age" ><br/>
+      birthday:<input name="birthday" ><br/>
       <input type="submit" value="提交并login"><br/>
     </form>
 

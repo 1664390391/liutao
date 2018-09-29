@@ -1,5 +1,11 @@
 package springstudy.myspringmvc.bean;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.NotNull;
+import java.util.Date;
+
 /**
  * details:
  *
@@ -7,7 +13,20 @@ package springstudy.myspringmvc.bean;
  * @date 2018/9/20
  */
 public class User {
+    @NotEmpty
     private String name;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthday;
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
     private int age;
     private Address address;
 
@@ -39,6 +58,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
+                ", birthday=" + birthday +
                 ", age=" + age +
                 ", address=" + address +
                 '}';

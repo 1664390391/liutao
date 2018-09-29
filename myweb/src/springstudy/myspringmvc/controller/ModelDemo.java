@@ -2,11 +2,14 @@ package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import springstudy.myspringmvc.bean.User;
 
+import javax.validation.Valid;
 import java.util.Date;
 
 
@@ -84,7 +87,14 @@ public class ModelDemo {
 
 
     @RequestMapping("saveUser")
-    public void saveUser(User user){
+    public void saveUser(@Valid User user, BindingResult bindingResult){
+        if(bindingResult.getErrorCount() > 0 ){
+            System.out.println("出现错误");
+            for(FieldError error : bindingResult.getFieldErrors()){
+                System.out.println(error.getField() + ":" + error.getDefaultMessage());
+            }
+            //跳转到错误页面，404等等
+        }
         System.out.println(user);
     }
 
