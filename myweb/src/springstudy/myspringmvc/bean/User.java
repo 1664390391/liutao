@@ -13,6 +13,23 @@ import java.util.Date;
  * @date 2018/9/20
  */
 public class User {
+
+
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public User() {
+    }
+
+    public User(String name, Date birthday, int age, Address address) {
+        this.name = name;
+        this.birthday = birthday;
+        this.age = age;
+        this.address = address;
+    }
+
     @NotEmpty
     private String name;
 

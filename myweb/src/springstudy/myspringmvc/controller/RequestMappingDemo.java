@@ -1,15 +1,15 @@
 package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import springstudy.myspringmvc.bean.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * details:
@@ -129,6 +129,15 @@ public class RequestMappingDemo {
         //这里目前还不支持任意重定向位置，不知道是为嘛..
         return "redirect:/success";
 
+    }
+
+    @ResponseBody
+    @RequestMapping("testJSON")
+    public List<User> testJSON(){
+        return new ArrayList<User>(){{
+            add(new User("xiaoqiang",11));
+            add(new User("wangcai",88));
+        }};
     }
 
 

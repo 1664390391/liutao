@@ -5,7 +5,9 @@
   Time: 15:29
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page isELIgnored="false"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <html>
   <head>
     <title>涛哥的index.jsp</title>
@@ -21,4 +23,12 @@
     </form>
 
   </body>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/WEB-ROOT/js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+      $(function () {
+          $.post("${pageContext.request.contextPath}/requestMappingDemo/testJSON",function (data) {
+            console.log(data);
+          })
+      })
+  </script>
 </html>
