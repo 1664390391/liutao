@@ -2,6 +2,8 @@ package springstudy.myspringmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import springstudy.myspringmvc.bean.User;
 
 import javax.servlet.ServletException;
@@ -139,6 +141,29 @@ public class RequestMappingDemo {
             add(new User("wangcai",88));
         }};
     }
+
+
+    @RequestMapping("testFileUpload")
+    public String testFileUpload(String desc, MultipartFile file){
+        System.out.println("desc:"+desc);
+        System.out.println("file:"+file.getOriginalFilename());
+        //可以使用流进行上传打印等
+        return "success";
+    }
+
+    @RequestMapping("teseException")
+    public String teseException(int i){
+        System.out.println("result :"+10/i);
+        return "success";
+    }
+
+
+//    @ExceptionHandler({ArithmeticException.class})
+//    public ModelAndView testArithmeticException(Exception e){
+//        System.out.println("testInnerArithmeticException :"+ e);
+//        ModelAndView mv = new ModelAndView("error");
+//        return mv;
+//    }
 
 
 

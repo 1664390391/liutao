@@ -12,6 +12,14 @@
   </head>
   <body>
 
+  <a href="${pageContext.request.contextPath}/requestMappingDemo/teseException?i=10"><h3>teseException</h3></a>
+
+
+  <form action="${pageContext.request.contextPath}/requestMappingDemo/testFileUpload" method="post" enctype="multipart/form-data">
+    File:<input type="file" name="file" /><br>
+    Desc:<input type="text" name="desc" /><br>
+    <input type="submit" value="Submit"/><br>
+  </form>
 
   <a href="requestMappingDemo/testMVCRedirect"><h3>testMVCRedirect</h3></a>
   <a href="requestMappingDemo/testsendRedirect"><h3>testsendRedirect</h3></a>

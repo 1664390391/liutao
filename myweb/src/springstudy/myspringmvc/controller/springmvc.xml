@@ -49,4 +49,26 @@
     <!-- 接上：所以实际开发中，通常需要配置<mvc:annotation-driven -->
     <mvc:annotation-driven ></mvc:annotation-driven>
 
+
+    <!-- 配置文件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <!-- 最大值，单位字节 1024 为1kb-->
+        <property name="maxUploadSize" value="1024000"></property>
+    </bean>
+
+    <!-- 配置拦截器信息  -->
+    <mvc:interceptors>
+        <!-- 拦截所有资源 -->
+        <bean class="springstudy.myspringmvc.interceptor.myInterceptor"></bean>
+
+        <!-- 配置自定义拦截资源，可以配置（不）拦截那些资源
+            经测试，path的路径字符串第一个/是需要加上的，否则路径不正确
+        -->
+        <mvc:interceptor>
+            <mvc:mapping path="/modelDemo/testCustomView"/>
+            <bean class="springstudy.myspringmvc.interceptor.myInterceptor2"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
