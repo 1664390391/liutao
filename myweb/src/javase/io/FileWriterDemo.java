@@ -27,7 +27,8 @@ public class FileWriterDemo {
         FileWriter writer = null;
         //外层的异常处理：处理流工作中发生的问题
         try {
-            writer = new FileWriter("d:"+ File.separator+"liutaowork"+File.separator+"testWriter.txt");
+//            writer = new FileWriter("d:"+ File.separator+"liutaowork"+File.separator+"testWriter.txt");
+            writer = new FileWriter("testWriter.txt");
              /*
             调用Writer中的writer(String) 将字符串写入
             注意：其实这里并没有保存数据，只是将字符串写入到临时缓冲区中（类似于记事本写完数据没有保存的状态，还没有写在实实在在的硬盘上）
