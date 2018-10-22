@@ -2,6 +2,7 @@ package javase.io;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 /**
  * details:模拟BufferedReader，实现BufferedReader中复写的read()和readLine()
@@ -12,15 +13,17 @@ import java.io.IOException;
  * 缓冲的原理：其实就是从源中取出一批数据装进数组，再从数组中取出数据
  * 然后每次取数据的时候需要判断数组是否为空，如果为空则重新从源中读取一批新的数据，没有的话则返回-1
  *
+ * 注意！！：既然MyBufferedReader是一个自定义的装饰类，那么应该是用Reader体系，并且操作的事Reader的对象的一些方法
+ *
  * @author lt
  * @date 2018/10/16
  */
-public class MyBufferedReader {
+public class MyBufferedReader extends Reader{
 
     //缓冲区关联的字符流对象
-    private FileReader fr;
+    private Reader fr;
 
-    public MyBufferedReader(FileReader fr) {
+    public MyBufferedReader(Reader fr) {
         this.fr = fr;
     }
 
@@ -56,12 +59,43 @@ public class MyBufferedReader {
         return ch;
     }
 
+    public String myReadLine() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        //使用缓冲区的read()在自己的数组中读取数据并存放到缓冲区中
+        //不断的读写，直到数据为止，或者遇到/r/n换行符也可以返回一行数据
+        int ch;
+        while((ch = myRead())!= -1){
+            if(ch == '\r'){
+                continue;
+            }
+            if(ch == '\n'){
+                return sb.toString();
+            }
+            sb.append((char) ch);
+        }
+        //如果文件最后没有换行，这时候缓冲区还有数据，但是文件已经读取完毕，需要判断并加以返回
+        if(sb.length() != 0){
+            return sb.toString();
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @throws IOException 注意这个异常需要抛出，给用户知道，不能自己在方法中处理了
+     */
     public void myClose() throws IOException {
         fr.close();
     }
 
 
+    @Override
+    public int read(char[] cbuf, int off, int len) throws IOException {
+        return 0;
+    }
 
-
-
+    @Override
+    public void close() throws IOException {
+        fr.close();
+    }
 }

@@ -11,6 +11,36 @@ import java.io.IOException;
  */
 public class TestMyBufferedReader {
     public static void main(String [] args){
+//        myBufferedReaderByRead();
+        myBufferedReaderByReadLine();
+
+    }
+
+    private static void myBufferedReaderByReadLine() {
+        //BufferedReader:读。字符输入流缓冲区
+        MyBufferedReader bfr = null;
+        try {
+            //将缓冲区关联一个字符输入流，并确定字符输入流的目的地
+            bfr = new MyBufferedReader(new FileReader("testBufferedWriter.txt"));
+            String line;
+            while((line = bfr.myReadLine())!= null){
+                System.out.println(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(bfr != null){
+                try {
+                    bfr.myClose();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static void myBufferedReaderByRead() {
         //BufferedReader:读。字符输入流缓冲区
         MyBufferedReader bfr = null;
         try {
