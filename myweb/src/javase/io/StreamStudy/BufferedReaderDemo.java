@@ -1,4 +1,4 @@
-package javase.io;
+package javase.io.StreamStudy;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

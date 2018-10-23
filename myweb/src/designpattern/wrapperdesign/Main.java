@@ -1,5 +1,7 @@
 package designpattern.wrapperdesign;
 
+import java.util.Properties;
+
 /**
  * details:测试装饰设计模式的简单使用
  * 装饰设计模式：对一组对象进行功能增强时，可以使用该模式进行问题的解决。
@@ -17,5 +19,10 @@ public class Main {
         System.out.println("---------启用增强person------");
         WrapperPerson wp = new WrapperPerson(p);
         wp.eat();
+
+
+        Properties initProp = new Properties(System.getProperties());
+        System.out.println("当前系统编码:" + initProp.getProperty("file.encoding"));
+        System.out.println("当前系统语言:" + initProp.getProperty("user.language"));
     }
 }

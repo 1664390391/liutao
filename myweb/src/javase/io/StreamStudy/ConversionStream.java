@@ -1,4 +1,4 @@
-package javase.io;
+package javase.io.StreamStudy;
 
 import java.io.*;
 
@@ -15,7 +15,55 @@ public class ConversionStream {
         //测试字符流转换为字节流
 //        OutputStreamWriterDemo();
         //代码综合
-        comprehensiveStream();
+//        comprehensiveStream();
+        //测试根据编码表进行文件的读写
+//        writeTextByEncode();
+        readTextByEncode();
+    }
+
+    /**
+     * 根据writeTextByEncode所书写的文件，然后将其用指定的编码表进行解析
+     */
+    private static void readTextByEncode() throws IOException {
+        char [] buf = new char[10];
+        //使用默认的平台编码表进行解析，得到你好两个字
+//        FileReader fr = new FileReader("defalut_encoding.txt");
+//        int len = fr.read(buf);
+
+        //将u8的文件使用gbk读，gbk一次只读两个字节，而你好在utf-8中每个中文字符占3个字节
+        //所以得到6个字节的gbk解码文字：浣犲ソ
+//        InputStreamReader isr = new InputStreamReader(new FileInputStream("appoint_encoding_u8.txt"),"gbk");
+//        int len = isr.read(buf);
+
+        //同理，使用u8编码解码gbk的文件，utf-8得到两个未知符号��
+        InputStreamReader isr = new InputStreamReader(new FileInputStream("appoint_encoding_gbk.txt"),"utf-8");
+        int len = isr.read(buf);
+
+        String str = new String(buf,0,len);
+        System.out.println(str);
+
+    }
+
+    /**
+     * 测试根据编码表进行文件的读写
+     * 如果使用默认的方法进行简单的读写，那么就使用FileWriter 对象，使用默认的系统编码表进行文件写入
+     *
+     */
+    private static void writeTextByEncode() throws IOException {
+//        FileWriter fw = new FileWriter("defalut_encoding.txt");//这里得到默认编码表所产生的文件，你好用了6个字节
+//        fw.write("你好");
+//        fw.close();
+
+        //2、使用字节转换流指定编码表进行写入，这里是6个字节
+//        OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("appoint_encoding_u8.txt"),"utf-8");
+//        osw.write("你好");
+//        osw.close();
+
+        //3、指定另一种码表,gbk是4个字节
+        OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("appoint_encoding_gbk.txt"),"gbk");
+        osw.write("你好");
+        osw.close();
+
     }
 
     /**
