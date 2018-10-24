@@ -1,9 +1,7 @@
-package javase.io.StreamStudy;
+package javase.io.streamstudy;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 
 /**
  * details:测试简单的字符输出流（写）

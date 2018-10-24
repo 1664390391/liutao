@@ -1,4 +1,4 @@
-package javase.io.StreamStudy;
+package javase.io.streamstudy;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

@@ -1,6 +1,5 @@
-package javase.io.StreamStudy;
+package javase.io.streamstudy;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 

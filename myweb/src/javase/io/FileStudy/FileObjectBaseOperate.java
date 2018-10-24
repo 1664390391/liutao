@@ -1,7 +1,6 @@
-package javase.io.FileStudy;
+package javase.io.filestudy;
 
 
-import javax.xml.soap.SOAPPart;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -22,40 +21,9 @@ public class FileObjectBaseOperate {
 //        TestJudgment();
         //测试重命名，类似于剪切的动作
 //        TestRenameTo();
-        //测试操作目录
-        TestListRoot();
+
     }
 
-    /**
-     * 测试操作目录
-     */
-    private static void TestListRoot() {
-        //得到所有的根目录并操作
-        File [] files = File.listRoots();
-        for (File file : files) {
-            System.out.println(file.getAbsolutePath()+"盘还剩余"+file.getFreeSpace()/(1024*1024*1024)+"G");
-            //可以进一步进行排序等操作
-        }
-
-        /*
-        list()获取当前目录下一级的文件以及文件夹名称，包含隐藏文件
-        1、调用list的方法的File对象中封装/访问的必须是目录。不能是文件，一些系统级的目录可能也访问不到
-        否则list返回null
-        2、如果目录存在但是没有任何内容，则返回一个长度为0的数组
-        所以：在得到目录list之后要进行健壮性的判断！
-         */
-        File file = new File("testDir1\\testDir2\\testDir3\\aaaa");
-        String [] names = file.list();
-        if(names == null){
-            System.out.println("该目录不存在!");
-        }else if (names.length == 0){
-            System.out.println("该目录下一级为空！");
-        }else{
-            for (String name : names) {
-                System.out.println("存在下一级目录"+name);
-            }
-        }
-    }
 
     private static void TestRenameTo() {
         File f1 = new File("fileObjectTest.txt");
