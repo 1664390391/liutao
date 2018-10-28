@@ -17,6 +17,7 @@ public class ArrayListDemo {
 //        list.get(1).show();
 
         List<String> list = new ArrayList<>();
+        list.add(0,"set");
         list.add("ss");
         list.add("vv");
         list.add("qq");
@@ -25,7 +26,9 @@ public class ArrayListDemo {
         list.add("22");
         list.add("aa");
         list.add("dd");
-        System.out.println(list.subList(0,10));
+        System.out.println(list);
+        list = list.subList(1,list.size());
+        System.out.println(list);
 
 
 //        List<Fu> list = Arrays.asList(new Zi1());
