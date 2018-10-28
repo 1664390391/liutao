@@ -1,4 +1,4 @@
-package javase.io.FileStudy;
+package javase.io.filestudy;
 
 import java.io.*;
 
