@@ -11,7 +11,7 @@ public class PrintDemo {
 
 //        PrintStreamDemo();
 
-        PrintWriterDemo();
+//        PrintWriterDemo();
 
     }
 
