@@ -1,14 +1,15 @@
 package javase.io.othercommonclass.bean;
 
-import java.io.Serializable;
+import java.io.*;
 
 /**
+ * 一个实现Enternalizable接口的person
  * Created by 16643 on 2018/10/29.
  */
-public class Person implements Serializable{
+public class PersonImplExternalizable implements Externalizable{
 
-    public Person(){
-        System.out.println("实现Serializable接口的Person类的构造器。。。,hashcode="+hashCode());
+    public PersonImplExternalizable(){
+        System.out.println("实现Externalizablee接口的Person类的构造器。。。,hashcode="+hashCode());
     }
 
     private String name;
@@ -26,8 +27,8 @@ public class Person implements Serializable{
     //显示声明自定义的serialVersionUID
     static final long serialVersionUID = 12312421412L;
 
-    public Person(String name, int age) {
-        System.out.println("实现Serializable接口的Person类有参数的的构造器。。。,hashcode="+hashCode());
+    public PersonImplExternalizable(String name, int age) {
+        System.out.println("实现Externalizable接口的Person类有参数的的构造器。。。,hashcode="+hashCode());
         this.name = name;
         this.age = age;
     }
@@ -56,5 +57,15 @@ public class Person implements Serializable{
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}'+"hashcode="+hashCode();
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        System.out.println("实现Externalizable接口的writeExternal()");
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        System.out.println("实现Externalizable接口的readExternal()");
     }
 }

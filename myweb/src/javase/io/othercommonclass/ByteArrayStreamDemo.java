@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * details:纯操作内存的流对象，内部维护的是一个字节数组
- * 同理还有CharArrayInputStream、CharArrayOutputStream、StringArrayInputStream、StringArrayOutputStream
+ * 同理还有CharArrayReader、CharArrayWriter、StringReaderm、StringArrayWriter操作的事字符、字符串数组缓冲区
  *
  * @author lt
  * @date 2018/10/30

@@ -1,11 +1,12 @@
 package javase.io.othercommonclass;
 
 import javase.io.othercommonclass.bean.Person;
+import javase.io.othercommonclass.bean.PersonImplExternalizable;
 
 import java.io.*;
 
 /**
- * 对象操作流的学习
+ * 对象操作流的学习，序列化对象等
  * Created by 16643 on 2018/10/29.
  */
 public class ObjectStreamDemo {
@@ -31,19 +32,25 @@ public class ObjectStreamDemo {
         //3、将一个实现Serializable接口的对象进行输出
         oos.writeObject(new Person("小强",10));
         oos.writeObject(new Person("wangcai",20));
+//        oos.writeObject(new PersonImplExternalizable("小强",10));
+//        oos.writeObject(new PersonImplExternalizable("wangcai",20));
         oos.close();
     }
 
     /**
      * 将序列化的文件使用对象输入流读取到内存中来
+     * 实现Serializable接口反序列化不会调用构造函数，因为对象完全以它存储的二进制位基础来构造，而不是调用构造器
      */
     private static void ObjectInputStreamDemo() throws IOException, ClassNotFoundException {
         //原理和ObjectOutputStream一样，确定流字节输入流，并且需要额外功能，读出对象
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("testObjectStream.object"));
         Person p = null;
+//        PersonImplExternalizable p = null;
         //解释一下这里为什么会抛出ClassNotFoundException
         //进行反序列化需要两个要求，序列化的硬盘文件和原始的类，这里的readObject会抛出ClassNotFoundException
-        while(( p = (Person) ois.readObject())!= null){
+        for (int i = 0 ; i< 2;i++){
+            p = (Person) ois.readObject();
+//            p = (PersonImplExternalizable) ois.readObject();
             System.out.println(p.toString());
         }
         ois.close();
