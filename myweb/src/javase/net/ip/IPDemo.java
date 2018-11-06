@@ -15,7 +15,7 @@ public class IPDemo {
         InetAddress ip = InetAddress.getLocalHost();
 
         //获取主机名得到主机的ip，主机名可以是ip的文本表示形式，也可以机器名
-        ip = InetAddress.getByName("www.sina.com");
+//        ip = InetAddress.getByName("www.sina.com");
 
         System.out.println("ip地址："+ip.getHostAddress());
         System.out.println("地址名称："+ip.getHostName());
