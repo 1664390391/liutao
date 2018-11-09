@@ -14,7 +14,7 @@
 
     <!-- 配置一个监听器SpringServletContextListener,测试简单的spring在web项目中的使用 -->
     <listener>
-        <listener-class>springstudy.myspring4.webdemo.listener.SpringServletContextListener</listener-class>
+        <listener-class>springstudy.myspring4.webdemo.listener.SpringServletContextListener</listener-class>`
     </listener>
 
 

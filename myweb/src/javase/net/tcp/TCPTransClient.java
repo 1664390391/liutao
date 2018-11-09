@@ -32,6 +32,9 @@ public class TCPTransClient {
          PrintWriter pw = new PrintWriter(System.out,true);
          String line;
          while((line = bufr.readLine())!= null){
+             if("over".equals(line)){
+                 break;
+             }
              //使用socket.getOutputStream()发送数据到服务器,即客户端的目的
              out.println(line);
              //服务器接收之后使用输入流接收。并输出端奥控制台上
