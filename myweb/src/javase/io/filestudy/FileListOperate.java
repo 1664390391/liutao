@@ -17,9 +17,9 @@ public class FileListOperate {
         //测试各种路径的写法
 //        TestListRootByPath();
         //根据过滤器得到文件列表
-        getFileListByFilter();
+//        getFileListByFilter();
         //使用递归的方式，深度遍历文件夹
-//        getFileAllList();
+        getFileAllList();
         //删除一个文件夹的所有内容，直接delete()是失败的，因为文件夹里面不是空的
 //        deleteFileAllList();
     }
@@ -64,7 +64,7 @@ public class FileListOperate {
      */
     private static void getFileAllList() {
         //得到需要遍历的文件夹对象
-        File file = new File("F:\\java学习\\02、第二阶段 Java web(24天)");
+        File file = new File("G:\\BaiduNetdiskDownload\\javase");
         //进行深度遍历
         int level = 0;
         getFileList(file,level);
@@ -77,9 +77,7 @@ public class FileListOperate {
      */
     private static void getFileList(File file,int level) {
         //得到文件对象下面所有的子文件(夹)，然后遍历
-//        File [] subFiles = file.listFiles();
-        //根据名称过滤
-        File [] subFiles = file.listFiles(new SuffixFilenameFilter(".avi"));
+        File [] subFiles = file.listFiles();
         System.out.println(getSpace(level)+file.getName());
         level++;
         for(int i = 0;i< subFiles.length;i++){
@@ -87,7 +85,10 @@ public class FileListOperate {
             if(subFiles[i].isDirectory()){
                 getFileList(subFiles[i],level);
             }else{
-
+                if(subFiles[i].getName().contains("模式")){
+                    System.out.println("---------------------------------");
+                    System.out.println("---------------------------------");
+                }
                 System.out.println(getSpace(level)+subFiles[i].getName());
             }
 
