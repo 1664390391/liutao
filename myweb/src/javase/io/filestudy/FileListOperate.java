@@ -19,9 +19,9 @@ public class FileListOperate {
         //根据过滤器得到文件列表
 //        getFileListByFilter();
         //使用递归的方式，深度遍历文件夹
-//        getFileAllList();
+        getFileAllList();
         //删除一个文件夹的所有内容，直接delete()是失败的，因为文件夹里面不是空的
-        deleteFileAllList();
+//        deleteFileAllList();
     }
 
     /**
@@ -64,7 +64,7 @@ public class FileListOperate {
      */
     private static void getFileAllList() {
         //得到需要遍历的文件夹对象
-        File file = new File(".\\testDir1");
+        File file = new File("G:\\BaiduNetdiskDownload\\javase");
         //进行深度遍历
         int level = 0;
         getFileList(file,level);
@@ -85,6 +85,10 @@ public class FileListOperate {
             if(subFiles[i].isDirectory()){
                 getFileList(subFiles[i],level);
             }else{
+                if(subFiles[i].getName().contains("模式")){
+                    System.out.println("---------------------------------");
+                    System.out.println("---------------------------------");
+                }
                 System.out.println(getSpace(level)+subFiles[i].getName());
             }
 
