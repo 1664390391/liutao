@@ -10,7 +10,11 @@
   <head>
     <title>涛哥的index.jsp</title>
   </head>
+
   <body>
+
+  <a href="ueditor.jsp"><h3>直接跳转Ueditor页面</h3></a>
+  <a href="WEB-ROOT/js/jquery-1.12.4.js"><h3>直接跳转某个js测试</h3></a>
 
   <a href="${pageContext.request.contextPath}/requestMappingDemo/teseException?i=10"><h3>teseException</h3></a>
 
@@ -77,5 +81,13 @@
     <a href="requestMappingDemo/testParamTransferMethod?id=32"><h3>testParamTransferMethod</h3></a>
     <br/>
     <a href="toSuccessPage"><h3>toSuccessPage</h3></a>
+
+
   </body>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/WEB-ROOT/js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+      // $(function () {
+      //     alert("hello jquery!");
+      // })
+  </script>
 </html>
