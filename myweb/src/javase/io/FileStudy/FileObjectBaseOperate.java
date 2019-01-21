@@ -14,7 +14,7 @@ import java.text.DateFormat;
 public class FileObjectBaseOperate {
     public static void main(String [] args) throws IOException {
         //测试获取的一些常用方法
-//        TestGet();
+        TestGet();
         //测试创建和删除
 //        TestCreateAndDelete();
         //测试判断

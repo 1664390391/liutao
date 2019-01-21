@@ -3,7 +3,7 @@ package datastrucre.day2_LinkedStudy;
 /**
  * 测试链表结构
  */
-public class LinkedListDemo<E> {
+public class MyLinkedList<E> {
 
     /**
      * 建立节点类，用来关联链表
@@ -41,7 +41,7 @@ public class LinkedListDemo<E> {
     /**
      * 初始构造函数，值和长度都是null
      */
-    public LinkedListDemo(){
+    public MyLinkedList(){
         dummyHead = new Node(null,null);
         size = 0;
     }
@@ -88,6 +88,9 @@ public class LinkedListDemo<E> {
 //        node.next = head;
 //        head = node;
 //        size++;
+
+        //如果从addFisrt角度来看，默认一个虚拟的头结点，然后每次都将虚拟头结点的下一级指向本元素e，
+        // 然后原来保存的下一个元素地址被放到本元素新建的node的下一级中去了。
         addByIndex(0,e);
     }
 
