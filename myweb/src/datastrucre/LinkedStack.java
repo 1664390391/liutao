@@ -1,4 +1,4 @@
-package javase;
+package datastrucre;
 
 /**
  * 测试自定义的年内部链式存储机制
